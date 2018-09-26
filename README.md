@@ -37,7 +37,7 @@ Deverá atender os requisitos abaixo para todas categorias de candidatos: Presid
 * Usar javascript puro é permitido
 * Usar CSS puro é permitido
 * Usar qualquer pré-processador (LESS ou SASS) é permitido
-* Não se esqueça da otimização da velocidade da aplicação nem da experiência do usuário.
+* Não se esqueça da otimização da velocidade da aplicação e da experiência do usuário.
 
 ## Critérios de avaliação
 
@@ -50,10 +50,10 @@ Deverá atender os requisitos abaixo para todas categorias de candidatos: Presid
 ## Procedimento
 
 * Faça um fork do projeto 
-* Ao finalizar a sua aplicação, crie uma branch no projeto de origem com seu nome e envie o seu código
+* Ao finalizar a sua aplicação, crie um pull request no projeto de origem.
 
 ## Prazo
-* O prazo para criar a branch e enviar o código é até o dia 01/10/2018, às 12h.
+*  O prazo para criar pull requests é até o dia 01/10/2018, às 12h.
 
 ### Dê o seu melhor!
 ### Boa prova! 
