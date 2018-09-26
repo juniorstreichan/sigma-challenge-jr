@@ -1,9 +1,9 @@
 # Processo Seletivo Frontend Junior da Sigma/TJMT
 Bem-vindo ao processo seletivo para desenvolvedor Frontend Junior do TJMT/Sigma!
 
-## O desafio - Projeto Democraticamente
+## O Desafio - Projeto Democraticamente
 
-Crie uma aplicação Web utilizando a API do TSE (Tribunal Superior Eleitoral) para todos os consumos de dados.
+Crie uma aplicação Web utilizando a API do TSE (Tribunal Superior Eleitoral) como fonte de dados.
 
 ## Endpoints:
 #### [Presidente](http://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2018/BR/2022802018/1/candidatos)
