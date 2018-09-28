@@ -1,0 +1,16 @@
+/* fonte padrao */
+
+
+html {
+  line-height: 1;
+  font-family: "Arial", sans-serif;
+
+}
+
+body{
+  background-color: #00468b94;
+
+}
+.font-hero{
+  font-family: "FontAvengers", sans-serif;
+}

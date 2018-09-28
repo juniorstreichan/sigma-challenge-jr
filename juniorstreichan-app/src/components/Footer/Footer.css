@@ -1,0 +1,24 @@
+footer {
+    background-color: #900000;
+    min-height: 200px;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    left: 0;
+    bottom: -10;
+    width: 100%;
+    color: white;
+    padding: 50px;
+    margin: 0;
+    box-sizing: border-box;
+    z-index: 10;
+}
+
+.content {
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+    width: 80%;
+}
