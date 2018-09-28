@@ -15,10 +15,11 @@ http://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2018/BR/2
 
 http://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2018/MT/2022802018/candidato/${id_candidato} // URL de detalhes das outras classes de candidatos
 
-Para visualizar o resultado das API's, vocês poder usar:
+### Para visualizar o resultado das API's, vocês poder usar:
 ##### [JSON Formatter](https://jsonformatter.curiousconcept.com/)
 ##### [JSON Formatter-Chrome extension](https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa?hl=pt-BR)
 ##### [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/?hl=pt-br)
+##### [Postman | API Development Environment](https://www.getpostman.com/)
 
 
 ## Requisitos
