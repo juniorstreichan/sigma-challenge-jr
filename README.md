@@ -27,10 +27,10 @@ Deverá atender os requisitos abaixo para todas categorias de candidatos: Presid
 ### Observações/Dicas
 
 * Não limite-se às funcionalidades acima. Qualquer outra feature extra (e não obrigatória) é bem-vinda. Por exemplo:
-    * Campo de pesquisa por nome nas páginas de listagem
-    * Criar uma lista para salvar seus candidatos (Pode ser memória ou cache), se persistir é melhor ainda
+    * Campo de pesquisa por nome na páginas de listagem
     * Campo de pesquisa por estado do candidato
-
+    * Criar uma lista para salvar seus candidatos (Pode ser memória ou cache), se persistir é melhor ainda
+    
 * O layout é por sua conta.
 * A arquitetura é por sua conta.
 * Qualquer framework SPA (Vue.js, React ou Angular) é permitido
