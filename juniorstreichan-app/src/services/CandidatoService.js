@@ -5,7 +5,7 @@ import {
     ENDPOINT_LIST_DEP_FEDERAL,
     ENDPOINT_LIST_DEP_ESTADUAL,
     ENDPOINT_CONSULT_BR,
-    ENDPOINT_CONSULT_MT
+    ENDPOINT_CONSULT_ESTADUAL
 } from '../config/apiConfig'
 
 
@@ -40,24 +40,11 @@ export function getDeputadosEstaduais() {
 }
 
 export function getPresidenteById(id = 0) {
-
+    return fetch(`${ENDPOINT_CONSULT_BR}/${id}`).then(response => response.json())
 }
 
 
-export function getGovernadorById(id = 0) {
-
+export function getCandidatoById(id = 0) {
+    return fetch(`${ENDPOINT_CONSULT_ESTADUAL}/${id}`).then(response => response.json())
 }
 
-
-export function getSenadorById(id = 0) {
-
-}
-
-
-export function getDeputadosFederalById(id = 0) {
-
-}
-
-export function getDeputadosEstadualById(id = 0) {
-
-}

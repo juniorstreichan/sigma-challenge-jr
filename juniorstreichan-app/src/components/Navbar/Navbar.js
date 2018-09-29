@@ -6,6 +6,7 @@ import { close, bars } from 'react-icons-kit/fa'
 
 import './Navbar.css'
 import { CARGO } from '../../config/cargos';
+import { EstadoSelecionado, ESTADOS } from '../../config/estados';
 
 export class Navbar extends Component {
 
@@ -32,8 +33,16 @@ export class Navbar extends Component {
                 <Link to="/">
                     <img className='logo' src={logo} alt="Logo" />
                 </Link>
-
                 <div className="navbar-container">
+                    {/* <select   >
+                        <option value={EstadoSelecionado.sigla}>{EstadoSelecionado.nome}</option>
+                        {ESTADOS.map((estado) =>
+                            (
+                                <option value={estado.sigla}>{estado.nome}</option>
+
+                            )
+                        )}
+                    </select> */}
 
                     <div className="navbar-item"><NavLink exact to="/" ClassName="active"><small>HOME</small></NavLink></div>
                     <div className="navbar-item"><NavLink to={`/candidatos/${CARGO.presidente}`} ClassName="active"><small>PRESIDENTES</small></NavLink></div>

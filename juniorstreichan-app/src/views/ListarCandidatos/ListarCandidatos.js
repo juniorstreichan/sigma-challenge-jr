@@ -38,13 +38,14 @@ class ListarCandidatos extends Component {
     componentDidMount() {
 
         const cargo = this.props.match.params.cargo
-        console.log(cargo);
+        // console.log(cargo);
         this.cargoParametro = cargo
         this.loadData()
     }
 
     loadData = () => {
 
+        window.scrollTo(0,0)
         this.setState({ candidatos:[],cargo:{},unidadeEleitoral:{}})
         switch (this.cargoParametro) {
             case CARGO.presidente:
@@ -91,7 +92,7 @@ class ListarCandidatos extends Component {
 
             return (
                 <Container>
-                    {candidatos.map((candidato, index) => (<div key={candidato.id}><CardCandidato candidato={candidato} /></div>))}
+                    {candidatos.map((candidato, index) => (<div key={candidato.id}><CardCandidato candidato={candidato} link={`/candidato/${this.cargoParametro}/${candidato.id}`} /></div>))}
                 </Container>
             );
         }

@@ -7,6 +7,12 @@ import { Link } from 'react-router-dom'
 import { CARGO } from '../../config/cargos';
 
 class Home extends Component {
+
+    componentDidMount() {
+        window.scrollTo(0, 0)
+    }
+
+
     render() {
         const styles = {
             display: 'flex',
