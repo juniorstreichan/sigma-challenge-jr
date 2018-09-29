@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import Spinner from 'react-spinkit' 
 
 class ListarCandidatos extends Component {
     render() {
         return (
             <div>
-              ListarCandidatos  
+             <Spinner name="cube-grid"  color='yellow'  />  
+             <Spinner name="cube-grid"  color='yellow'  />  
+             <Spinner name="cube-grid"  color='yellow'  />  
             </div>
         );
     }
