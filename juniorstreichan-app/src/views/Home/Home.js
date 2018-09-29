@@ -18,8 +18,7 @@ class Home extends Component {
                         <h1>ELEIÇOES 2018</h1>
                         <h2>CONHEÇA OS CANDIDATOS</h2>
                     </div>
-                    {/* <Link to='/' ></Link> */}
-                    <Link to='/' >
+                    <Link to='/candidatos/presidente' >
                         <CardItem>
                             <h4><Icon icon={university} size={16} />
                                 Governo Federal
@@ -27,14 +26,14 @@ class Home extends Component {
                         </CardItem>
                     </Link>
                     <Container >
-                        <Link to='/' >
+                        <Link to='/candidatos/governador' >
                             <CardItem>
                                 <h4><Icon icon={university} size={16} />
                                     Governo Estadual
                             </h4>
                             </CardItem>
                         </Link>
-                        <Link to='/' >
+                        <Link to='/candidatos/senador' >
                             <CardItem>
                                 <h4><Icon icon={bookOpen} size={16} />
                                     Senado Federal
@@ -42,14 +41,14 @@ class Home extends Component {
 
                             </CardItem>
                         </Link>
-                        <Link to='/' >
+                        <Link to='/candidatos/deputadofederal' >
                             <CardItem>
                                 <h4><Icon icon={bookOpen} size={16} />
                                     Deputado Federal
                             </h4>
                             </CardItem>
                         </Link>
-                        <Link to='/' >
+                        <Link to='/candidatos/deputadoestadual' >
                             <CardItem>
 
                                 <h4><Icon icon={university} size={16} />

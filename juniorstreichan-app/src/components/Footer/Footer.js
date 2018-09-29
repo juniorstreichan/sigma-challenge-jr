@@ -16,22 +16,22 @@ class Footer extends Component {
                         <Link to='/'>
                             <Button margin='10px' bgColor={'#9000'} padding='10px' label={'HOME'} />
                         </Link>
-                        <Link to='/'>
+                        <Link to='/candidatos/presidente'>
                             <Button margin='10px' bgColor={'#9000'} padding='10px' label={'PRESIDENTES'} />
                         </Link>
-                        <Link to='/'>
+                        <Link to='/candidatos/governador'>
                             <Button margin='10px' bgColor={'#9000'} padding='10px' label={'GOVERNADORES'} />
                         </Link>
                     </div>
                     <div className="box">
-                        <Link to='/'>
+                        <Link to='/candidatos/senador'>
                             <Button margin='10px' bgColor={'#9000'} padding='10px' label={'SENADORES'} />
                         </Link>
-                        <Link to='/'>
-                            <Button margin='10px' bgColor={'#9000'} padding='10px' label={'DEP FEDERAIS'} />
+                        <Link to='/candidatos/deputadofederal'>
+                            <Button margin='10px' bgColor={'#9000'} padding='10px' label={'DEPUTADOS FEDERAIS'} />
                         </Link>
-                        <Link to='/'>
-                            <Button margin='10px' bgColor={'#9000'} padding='10px' label={'DEP ESTADUAIS'} />
+                        <Link to='/candidatos/deputadoestadual'>
+                            <Button margin='10px' bgColor={'#9000'} padding='10px' label={'DEPUTADOS ESTADUAIS'} />
                         </Link>
                     </div>
 
