@@ -35,11 +35,11 @@ export class Navbar extends Component {
                 <div className="navbar-container">
 
                     <div className="navbar-item"><NavLink exact to="/" ClassName="active"><small>HOME</small></NavLink></div>
-                    <div className="navbar-item"><NavLink exact to="/candidatos/presidente" ClassName="active"><small>PRESIDENTES</small></NavLink></div>
-                    <div className="navbar-item"><NavLink exact to="/candidatos/governador" ClassName="active"><small>GOVERNADORES</small></NavLink></div>
-                    <div className="navbar-item"><NavLink exact to="/candidatos/senador" ClassName="active"><small>SENADORES</small></NavLink></div>
-                    <div className="navbar-item"><NavLink exact to="/candidatos/deputadofederal" ClassName="active"><small>DEP FEDERAIS</small></NavLink></div>
-                    <div className="navbar-item"><NavLink exact to="/candidatos/deputadoestadual" ClassName="active"><small>DEP ESTADUAIS</small></NavLink></div>
+                    <div className="navbar-item"><NavLink  to={`/candidatos/presidente`} ClassName="active"><small>PRESIDENTES</small></NavLink></div>
+                    <div className="navbar-item"><NavLink  to="/candidatos/governador" ClassName="active"><small>GOVERNADORES</small></NavLink></div>
+                    <div className="navbar-item"><NavLink  to="/candidatos/senador" ClassName="active"><small>SENADORES</small></NavLink></div>
+                    <div className="navbar-item"><NavLink  to="/candidatos/deputadofederal" ClassName="active"><small>DEP FEDERAIS</small></NavLink></div>
+                    <div className="navbar-item"><NavLink  to="/candidatos/deputadoestadual" ClassName="active"><small>DEP ESTADUAIS</small></NavLink></div>
 
                     {hiddenMenu ? (
                         <div onClick={this.toggleMenu} className="button-menu">
@@ -53,11 +53,11 @@ export class Navbar extends Component {
                     <div    >
                         
                         <div><NavLink exact to="/" ClassName="active"><small>HOME</small></NavLink></div>
-                        <div><NavLink exact to="/candidatos/presidente" ClassName="active"><small>PRESIDENTES</small></NavLink></div>
-                        <div><NavLink exact to="/candidatos/governador" ClassName="active"><small>GOVERNADORES</small></NavLink></div>
-                        <div><NavLink exact to="/candidatos/senador" ClassName="active"><small>SENADORES</small></NavLink></div>
-                        <div><NavLink exact to="/candidatos/deputadofederal" ClassName="active"><small>DEP FEDERAIS</small></NavLink></div>
-                        <div><NavLink exact to="/candidatos/deputadoestadual" ClassName="active"><small>DEP ESTADUAIS</small></NavLink></div>
+                        <div><NavLink exact to="/candidatos" ClassName="active"><small>PRESIDENTES</small></NavLink></div>
+                        <div><NavLink exact to="/teste1" ClassName="active"><small>GOVERNADORES</small></NavLink></div>
+                        <div><NavLink exact to="/teste2" ClassName="active"><small>SENADORES</small></NavLink></div>
+                        <div><NavLink exact to="/teste3" ClassName="active"><small>DEP FEDERAIS</small></NavLink></div>
+                        <div><NavLink exact to="/teste4" ClassName="active"><small>DEP ESTADUAIS</small></NavLink></div>
 
 
                         <Button textSize={50} bgColor={'#9000'} color={'blue'} onClick={this.toggleMenu} icon={close} />
