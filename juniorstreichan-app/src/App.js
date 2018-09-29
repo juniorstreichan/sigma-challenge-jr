@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Navbar, Container } from './components';
+import { Navbar, Container, Footer } from './components';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { Home } from './views';
 
@@ -20,13 +20,14 @@ class App extends Component {
         <div>
           <Navbar />
           <div style={styles}>
-            <Container>
-              <Switch>
-                <Route path="/" exact component={Home} />
 
-              </Switch>
-            </Container>
+            <Switch>
+              <Route path="/" exact component={Home} />
+
+            </Switch>
+
           </div>
+          <Footer />
         </div>
 
       </BrowserRouter>

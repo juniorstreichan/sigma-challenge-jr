@@ -8,15 +8,14 @@ a {
   position: fixed;
   width: 100%;
   background-color: rgb(255, 255, 255);
-
   top: 0;
   left: 0;
+  z-index: 101;
   box-shadow: 0 5px 10px 1px rgba(17, 17, 17, 0.432);
   transition: all 400ms ease-in-out;
 }
 
 .navbar-container {
-  
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-end;
@@ -26,7 +25,6 @@ a {
 }
 
 .navbar-item {
-
   align-self: center;
   text-decoration: none;
   cursor: pointer;
@@ -46,11 +44,12 @@ a {
 .active {
   padding: 20px;
   background-color: #f5f12a;
-  color: green;
+  
+  color: rgb(2, 70, 2);
 }
 
 .side-nav {
-  padding-top: 50%;
+  padding-top: 5%;
   visibility: hidden;
   line-height: 50px;
   color: white;
@@ -65,12 +64,18 @@ a {
   height: 100%;
   justify-content: center;
   align-items: center;
-  background-color: rgba(20, 20, 20, 0.897);
+
+  
+  background: -moz-linear-gradient(top, rgba(38,211,0,0.84) 0%, rgba(202,234,16,0.84) 87%, rgba(226,237,18,0) 100%);
+  background: -webkit-linear-gradient(top, rgba(38,211,0,0.84) 0%,rgba(202,234,16,0.84) 87%,rgba(226,237,18,0) 100%);
+  background: linear-gradient(to bottom, rgba(38,211,0,0.84) 0%,rgba(202,234,16,0.84) 87%,rgba(226,237,18,0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d626d300', endColorstr='#00e2ed12',GradientType=0 );
 }
 
 @media screen and (max-width: 480px) {
   .navbar-item {
     visibility: hidden;
+    display: none;
   }
   .button-menu, .side-nav {
     visibility: visible;
@@ -81,14 +86,16 @@ a {
   }
 }
 
+
+
 .logo {
   padding-left: 10%;
   position: fixed;
-  max-width: 150px;
+  max-width: 130px;
   margin: 0 auto;
   transition: all 400ms ease-in-out;
 }
 
 .logo:hover {
-  max-width: 155px;
+  max-width: 140px;
 }

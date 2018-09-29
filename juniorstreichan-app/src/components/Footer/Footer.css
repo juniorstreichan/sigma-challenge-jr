@@ -1,5 +1,5 @@
 footer {
-    background-color: #900000;
+    background-color: #239400c7;
     min-height: 200px;
     position: absolute;
     justify-content: center;
@@ -16,9 +16,15 @@ footer {
 }
 
 .content {
-    /* background-color: aqua; */
+    /* position: absolute; */
     display: flex;
     justify-content: space-around;
     flex-flow: row wrap;
     width: 80%;
+}
+
+.box {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
 }

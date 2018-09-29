@@ -29,13 +29,18 @@ export class Navbar extends Component {
         return (<div>
             <div className="navbar">
                 <Link to="/">
-                <img className='logo' src={logo} alt="Logo" />
+                    <img className='logo' src={logo} alt="Logo" />
                 </Link>
 
                 <div className="navbar-container">
-                    <div className="navbar-item"><NavLink exact to="/" ClassName="active">item 1</NavLink></div>
-                    <div className="navbar-item"><NavLink exact to="/candidatos" ClassName="active">item 2</NavLink></div>
-                    <div className="navbar-item"><NavLink exact to="/teste" ClassName="active">item 3</NavLink></div>
+
+                    <div className="navbar-item"><NavLink exact to="/" ClassName="active"><small>HOME</small></NavLink></div>
+                    <div className="navbar-item"><NavLink exact to="/candidatos" ClassName="active"><small>PRESIDENTES</small></NavLink></div>
+                    <div className="navbar-item"><NavLink exact to="/teste1" ClassName="active"><small>GOVERNADORES</small></NavLink></div>
+                    <div className="navbar-item"><NavLink exact to="/teste2" ClassName="active"><small>SENADORES</small></NavLink></div>
+                    <div className="navbar-item"><NavLink exact to="/teste3" ClassName="active"><small>DEP FEDERAIS</small></NavLink></div>
+                    <div className="navbar-item"><NavLink exact to="/teste4" ClassName="active"><small>DEP ESTADUAIS</small></NavLink></div>
+
                     {hiddenMenu ? (
                         <div onClick={this.toggleMenu} className="button-menu">
                             <Button bgColor={'#9000'} onClick={this.toggleMenu} color={'blue'} icon={bars} />
@@ -45,11 +50,17 @@ export class Navbar extends Component {
             </div>
             {!hiddenMenu ? (
                 <div className='side-nav'>
-                    <div style={{ flexGrow: 1 }}>
-                        <div><NavLink exact ClassName="active" to="/">Home</NavLink></div>
-            
+                    <div    >
+                        
+                        <div><NavLink exact to="/" ClassName="active"><small>HOME</small></NavLink></div>
+                        <div><NavLink exact to="/candidatos" ClassName="active"><small>PRESIDENTES</small></NavLink></div>
+                        <div><NavLink exact to="/teste1" ClassName="active"><small>GOVERNADORES</small></NavLink></div>
+                        <div><NavLink exact to="/teste2" ClassName="active"><small>SENADORES</small></NavLink></div>
+                        <div><NavLink exact to="/teste3" ClassName="active"><small>DEP FEDERAIS</small></NavLink></div>
+                        <div><NavLink exact to="/teste4" ClassName="active"><small>DEP ESTADUAIS</small></NavLink></div>
 
-                        <Button textSize={50} bgColor={'#9000'} onClick={this.toggleMenu} icon={close} />
+
+                        <Button textSize={50} bgColor={'#9000'} color={'blue'} onClick={this.toggleMenu} icon={close} />
                     </div>
                 </div>
             ) : null}

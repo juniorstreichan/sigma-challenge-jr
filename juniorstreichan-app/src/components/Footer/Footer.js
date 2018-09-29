@@ -9,17 +9,32 @@ class Footer extends Component {
         return (
             <footer>
                 <div className="content">
-                    <Link to='/'>
-                        <Button margin='10px' bgColor={'#800'} padding='10px' label={'HOME'} />
-                    </Link>
-                    
-                    <Link to='/personagens'>
-                        <Button margin='10px' bgColor={'#800'} padding='10px' label={'PERSONAGENS'} />
-                    </Link>
-                    
-                    <Link to='/contato'>
-                        <Button margin='10px' bgColor={'#800'} label={'CONTATO'} />
-                    </Link>
+                    <div className="box">
+                        ELEIÇOES 2018
+                    </div>
+                    <div className="box">
+                        <Link to='/'>
+                            <Button margin='10px' bgColor={'#9000'} padding='10px' label={'HOME'} />
+                        </Link>
+                        <Link to='/'>
+                            <Button margin='10px' bgColor={'#9000'} padding='10px' label={'PRESIDENTES'} />
+                        </Link>
+                        <Link to='/'>
+                            <Button margin='10px' bgColor={'#9000'} padding='10px' label={'GOVERNADORES'} />
+                        </Link>
+                    </div>
+                    <div className="box">
+                        <Link to='/'>
+                            <Button margin='10px' bgColor={'#9000'} padding='10px' label={'SENADORES'} />
+                        </Link>
+                        <Link to='/'>
+                            <Button margin='10px' bgColor={'#9000'} padding='10px' label={'DEP FEDERAIS'} />
+                        </Link>
+                        <Link to='/'>
+                            <Button margin='10px' bgColor={'#9000'} padding='10px' label={'DEP ESTADUAIS'} />
+                        </Link>
+                    </div>
+
                 </div>
             </footer>
         );
