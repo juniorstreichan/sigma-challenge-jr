@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Loading } from '../../components'
+import { Loading, Container } from '../../components'
 import {
     getPresidentes,
     getGovernadores,
@@ -7,14 +7,18 @@ import {
     getDeputadosFederais,
     getDeputadosEstaduais
 } from '../../services/CandidatoService'
+import { CARGO } from '../../config/cargos';
+import { CardCandidato } from '../../components/Card/CardCandidato';
 
 
 class ListarCandidatos extends Component {
 
 
+
     constructor(props) {
-        super(props);
-        const cargo = ''
+        super(props)
+
+        var cargoParametro = ''
         this.state = {
             unidadeEleitoral: {},
             cargo: {},
@@ -24,48 +28,57 @@ class ListarCandidatos extends Component {
 
     componentDidUpdate() {
         const cargo = this.props.match.params.cargo
-        if (this.cargo !== cargo) {
-            this.cargo = cargo
+        if (this.cargoParametro !== cargo) {
+            this.cargoParametro = cargo
             this.loadData()
         }
     }
 
 
     componentDidMount() {
+
         const cargo = this.props.match.params.cargo
         console.log(cargo);
-        this.cargo = cargo
+        this.cargoParametro = cargo
         this.loadData()
     }
 
     loadData = () => {
 
-
-        switch (this.cargo) {
-            case 'presidente':
+        this.setState({ candidatos:[],cargo:{},unidadeEleitoral:{}})
+        switch (this.cargoParametro) {
+            case CARGO.presidente:
                 getPresidentes().then(dados => {
                     this.setState(dados)
                 })
-                break;
-            case 'governador':
+                break
+            case CARGO.governador:
                 getGovernadores().then(dados => {
                     this.setState(dados)
                 })
-                break;
-            case 'senador':
+                break
+            case CARGO.senador:
                 getSenadores().then(dados => {
                     this.setState(dados)
                 })
-                break;
-            case 'governador':
-                getGovernadores().then(dados => {
+                break
+            case CARGO.deputadofederal:
+                getDeputadosFederais().then(dados => {
                     this.setState(dados)
                 })
-                break;
+                break
+
+            case CARGO.deputadoestadual:
+                getDeputadosEstaduais().then(dados => {
+                    this.setState(dados)
+                })
+                break
 
             default:
 
-                break;
+                this.props.history.push("/")
+
+                break
         }
 
 
@@ -77,13 +90,13 @@ class ListarCandidatos extends Component {
         if (candidatos.length > 0) {
 
             return (
-                <div>
-                    {candidatos.map((candidato, index) => (<pre key={index}>{JSON.stringify(candidato)}</pre>))}
-                </div>
+                <Container>
+                    {candidatos.map((candidato, index) => (<div key={candidato.id}><CardCandidato candidato={candidato} /></div>))}
+                </Container>
             );
         }
         return (
-            <Loading />
+            <Loading message='CARREGANDO DADOS DO TSE...' />
         );
     }
 }

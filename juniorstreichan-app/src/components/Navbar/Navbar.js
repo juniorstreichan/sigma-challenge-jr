@@ -5,6 +5,7 @@ import { Button } from '../Button/Button';
 import { close, bars } from 'react-icons-kit/fa'
 
 import './Navbar.css'
+import { CARGO } from '../../config/cargos';
 
 export class Navbar extends Component {
 
@@ -35,11 +36,11 @@ export class Navbar extends Component {
                 <div className="navbar-container">
 
                     <div className="navbar-item"><NavLink exact to="/" ClassName="active"><small>HOME</small></NavLink></div>
-                    <div className="navbar-item"><NavLink  to={`/candidatos/presidente`} ClassName="active"><small>PRESIDENTES</small></NavLink></div>
-                    <div className="navbar-item"><NavLink  to="/candidatos/governador" ClassName="active"><small>GOVERNADORES</small></NavLink></div>
-                    <div className="navbar-item"><NavLink  to="/candidatos/senador" ClassName="active"><small>SENADORES</small></NavLink></div>
-                    <div className="navbar-item"><NavLink  to="/candidatos/deputadofederal" ClassName="active"><small>DEP FEDERAIS</small></NavLink></div>
-                    <div className="navbar-item"><NavLink  to="/candidatos/deputadoestadual" ClassName="active"><small>DEP ESTADUAIS</small></NavLink></div>
+                    <div className="navbar-item"><NavLink to={`/candidatos/${CARGO.presidente}`} ClassName="active"><small>PRESIDENTES</small></NavLink></div>
+                    <div className="navbar-item"><NavLink to={`/candidatos/${CARGO.governador}`} ClassName="active"><small>GOVERNADORES</small></NavLink></div>
+                    <div className="navbar-item"><NavLink to={`/candidatos/${CARGO.senador}`} ClassName="active"><small>SENADORES</small></NavLink></div>
+                    <div className="navbar-item"><NavLink to={`/candidatos/${CARGO.deputadofederal}`} ClassName="active"><small>DEP FEDERAIS</small></NavLink></div>
+                    <div className="navbar-item"><NavLink to={`/candidatos/${CARGO.deputadoestadual}`} ClassName="active"><small>DEP ESTADUAIS</small></NavLink></div>
 
                     {hiddenMenu ? (
                         <div onClick={this.toggleMenu} className="button-menu">
@@ -51,16 +52,16 @@ export class Navbar extends Component {
             {!hiddenMenu ? (
                 <div className='side-nav'>
                     <div    >
-                        
+
                         <div><NavLink exact to="/" ClassName="active"><small>HOME</small></NavLink></div>
-                        <div><NavLink exact to="/candidatos" ClassName="active"><small>PRESIDENTES</small></NavLink></div>
-                        <div><NavLink exact to="/teste1" ClassName="active"><small>GOVERNADORES</small></NavLink></div>
-                        <div><NavLink exact to="/teste2" ClassName="active"><small>SENADORES</small></NavLink></div>
-                        <div><NavLink exact to="/teste3" ClassName="active"><small>DEP FEDERAIS</small></NavLink></div>
-                        <div><NavLink exact to="/teste4" ClassName="active"><small>DEP ESTADUAIS</small></NavLink></div>
+                        <div><NavLink exact to={`/candidatos/${CARGO.presidente}`} ClassName="active"><small>PRESIDENTES</small></NavLink></div>
+                        <div><NavLink exact to={`/candidatos/${CARGO.governador}`} ClassName="active"><small>GOVERNADORES</small></NavLink></div>
+                        <div><NavLink exact to={`/candidatos/${CARGO.senador}`} ClassName="active"><small>SENADORES</small></NavLink></div>
+                        <div><NavLink exact to={`/candidatos/${CARGO.deputadofederal}`} ClassName="active"><small>DEP FEDERAIS</small></NavLink></div>
+                        <div><NavLink exact to={`/candidatos/${CARGO.deputadoestadual}`} ClassName="active"><small>DEP ESTADUAIS</small></NavLink></div>
 
 
-                        <Button textSize={50} bgColor={'#9000'} color={'blue'} onClick={this.toggleMenu} icon={close} />
+                        <Button height='50px' textSize={50} bgColor={'#9000'} color={'blue'} onClick={this.toggleMenu} icon={close} />
                     </div>
                 </div>
             ) : null}

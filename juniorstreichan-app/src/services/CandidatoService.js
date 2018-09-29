@@ -35,7 +35,7 @@ export function getDeputadosFederais() {
 }
 
 export function getDeputadosEstaduais() {
-    return fetch(ENDPOINT_LIST_DEP_FEDERAL).then(response => response.json())
+    return fetch(ENDPOINT_LIST_DEP_ESTADUAL).then(response => response.json())
 
 }
 

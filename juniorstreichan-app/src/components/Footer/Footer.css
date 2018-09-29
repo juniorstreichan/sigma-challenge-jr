@@ -21,10 +21,12 @@ footer {
     justify-content: space-around;
     flex-flow: row wrap;
     width: 80%;
+    align-items: center;
 }
 
 .box {
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
+    align-items: center;
 }

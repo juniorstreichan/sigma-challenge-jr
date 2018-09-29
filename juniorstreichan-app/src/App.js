@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Navbar, Container, Footer } from './components';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { Home, ListarCandidatos, DetalhesCandidato } from './views';
+import { NotFound } from './components/NotFound/NotFound';
 
 class App extends Component {
 
@@ -23,9 +24,10 @@ class App extends Component {
 
             <Switch>
               <Route path="/" exact component={Home} />
-              <Route path="/candidatos/:cargo"  component={ListarCandidatos} />
-              <Route path="/candidato/:id" exact component={DetalhesCandidato} />
-              <Route path="*" exact component={Home} />
+              <Route path="/candidatos/:cargo" exact component={ListarCandidatos} />
+              <Route path="/candidato/:cargo/:id" exact component={DetalhesCandidato} />
+              <Route path="*" exact render={() => <NotFound />} />
+              <Route path="/404" exact render={() => <NotFound />} />
 
             </Switch>
 

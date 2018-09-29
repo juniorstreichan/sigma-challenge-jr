@@ -4,6 +4,7 @@ import { university } from 'react-icons-kit/fa/university'
 import { bookOpen } from 'react-icons-kit/feather/bookOpen'
 import { Icon } from 'react-icons-kit'
 import { Link } from 'react-router-dom'
+import { CARGO } from '../../config/cargos';
 
 class Home extends Component {
     render() {
@@ -18,7 +19,7 @@ class Home extends Component {
                         <h1>ELEIÇOES 2018</h1>
                         <h2>CONHEÇA OS CANDIDATOS</h2>
                     </div>
-                    <Link to='/candidatos/presidente' >
+                    <Link to={`/candidatos/${CARGO.presidente}`} >
                         <CardItem>
                             <h4><Icon icon={university} size={16} />
                                 Governo Federal
@@ -26,14 +27,14 @@ class Home extends Component {
                         </CardItem>
                     </Link>
                     <Container >
-                        <Link to='/candidatos/governador' >
+                        <Link to={`/candidatos/${CARGO.governador}`} >
                             <CardItem>
                                 <h4><Icon icon={university} size={16} />
                                     Governo Estadual
                             </h4>
                             </CardItem>
                         </Link>
-                        <Link to='/candidatos/senador' >
+                        <Link to={`/candidatos/${CARGO.senador}`} >
                             <CardItem>
                                 <h4><Icon icon={bookOpen} size={16} />
                                     Senado Federal
@@ -41,14 +42,14 @@ class Home extends Component {
 
                             </CardItem>
                         </Link>
-                        <Link to='/candidatos/deputadofederal' >
+                        <Link to={`/candidatos/${CARGO.deputadofederal}`} >
                             <CardItem>
                                 <h4><Icon icon={bookOpen} size={16} />
                                     Deputado Federal
                             </h4>
                             </CardItem>
                         </Link>
-                        <Link to='/candidatos/deputadoestadual' >
+                        <Link to={`/candidatos/${CARGO.deputadoestadual}`} >
                             <CardItem>
 
                                 <h4><Icon icon={university} size={16} />
