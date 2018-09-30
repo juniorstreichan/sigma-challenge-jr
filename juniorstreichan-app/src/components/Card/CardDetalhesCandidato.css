@@ -1,0 +1,44 @@
+main {
+    width: 100%;
+    height: 100%;
+    /* position: relative;   */
+}
+
+img {
+    border-radius: 5px;
+    margin: 2%;
+}
+
+.deferido {
+    color: green;
+}
+
+.indeferido {
+    color: red;
+}
+
+.img-vice {
+    width: 50px;
+}
+
+.wrapper-img {
+    margin: 2%;
+    margin-right: 10px;
+    padding: 2px;
+    line-height: 30px;
+}
+
+.img-candidato {
+    width: 100%;
+    max-width: 200px;
+}
+
+.text-mobile {
+    display: none;
+}
+
+@media screen and (max-width: 480px) {
+    .text-mobile {
+        display: block;
+    } 
+}

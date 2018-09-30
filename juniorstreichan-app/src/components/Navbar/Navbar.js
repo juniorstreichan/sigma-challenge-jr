@@ -6,7 +6,7 @@ import { close, bars } from 'react-icons-kit/fa'
 
 import './Navbar.css'
 import { CARGO } from '../../config/cargos';
-import { EstadoSelecionado, ESTADOS } from '../../config/estados';
+// import { EstadoSelecionado, ESTADOS } from '../../config/estados';
 
 export class Navbar extends Component {
 

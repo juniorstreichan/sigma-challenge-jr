@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { CARGO } from '../../config/cargos';
 import { getPresidenteById, getCandidatoById } from '../../services/CandidatoService';
+import { Container, Card, Loading, CardItem, Button, Modal } from '../../components';
+import { CardDetalhesCandidato } from '../../components/Card/CardDetalhesCandidato';
 
 class DetalhesCandidato extends Component {
 
@@ -10,14 +12,20 @@ class DetalhesCandidato extends Component {
         var cargoParametro = ''
         var idParametro = ''
         this.state = {
-            bens: [{}],
+            showModal: false,
             cargo: {},
-            fotoUrl: '',
-            nomeCompleto: '',
-            numero:'',
-            descricaoSituacao: '',
-            partido:''
+            partido: {},
+            vices: [{}],
+            emails: [],
+            bens: [{}],
+            sites: []
         }
+    }
+
+    toggleModal = () => {
+        this.setState({
+            showModal: !this.state.showModal
+        })
     }
 
     componentDidUpdate() {
@@ -84,13 +92,28 @@ class DetalhesCandidato extends Component {
 
     render() {
         const candidato = this.state
-        return (
-            <div>
-                {JSON.stringify(candidato)}
-            </div>
-        );
-    }
+        const { showModal } = this.state
+        if (candidato.nomeCompleto) {
 
+            return (
+
+                <div>
+                    {candidato.bens.length > 0 ? (<Button width='100%' label='BENS DECLARADOS PELO CANDIDATO' onClick={this.toggleModal} />) : (<p>NENHUM BEM DECLARADO</p>)}
+                    <CardDetalhesCandidato candidato={candidato} />
+                    <Modal closeBgClick show={showModal} handleClose={this.toggleModal} >
+                       <div style={{padding:'5%', maxHeight:'500px',overflow:'auto'}} >
+TESTE
+                       </div>
+                    </Modal>
+
+                </div>
+            );
+        }
+
+        return (
+            <Loading />
+        )
+    }
 
 }
 
