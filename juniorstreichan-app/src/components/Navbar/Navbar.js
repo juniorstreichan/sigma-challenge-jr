@@ -61,6 +61,7 @@ export class Navbar extends Component {
             {!hiddenMenu ? (
                 <div className='side-nav'>
                     <div    >
+                    <hr />
 
                         <div><NavLink exact to="/" ClassName="active"><small>HOME</small></NavLink></div>
                         <div><NavLink exact to={`/candidatos/${CARGO.presidente}`} ClassName="active"><small>PRESIDENTES</small></NavLink></div>
@@ -69,8 +70,8 @@ export class Navbar extends Component {
                         <div><NavLink exact to={`/candidatos/${CARGO.deputadofederal}`} ClassName="active"><small>DEP FEDERAIS</small></NavLink></div>
                         <div><NavLink exact to={`/candidatos/${CARGO.deputadoestadual}`} ClassName="active"><small>DEP ESTADUAIS</small></NavLink></div>
 
-
-                        <Button height='50px' textSize={50} bgColor={'#9000'} color={'blue'} onClick={this.toggleMenu} icon={close} />
+                        <hr />
+                        <Button height='50px' padding={10} bgColor={'green'} color={'yellow'} onClick={this.toggleMenu} icon={close} />
                     </div>
                 </div>
             ) : null}

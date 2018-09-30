@@ -102,7 +102,7 @@ class DetalhesCandidato extends Component {
                         <div>
                             <Button width='100%' label={`BENS DECLARADOS ${candidato.descricaoSexo === 'FEM.' ? 'PELA CANDIDATA' :'PELO CANDIDATO'}`} onClick={this.toggleModal} />
                             <Modal closeBgClick show={showModal} handleClose={this.toggleModal} >
-                                <h3>Bens declarados por {candidato.nomeUrna}</h3>
+                                <h3 style={{textAlign:'center'}} >Bens declarados por {candidato.nomeUrna}</h3>
                                 <div style={{ padding: '2%', height: '200px', width: '80%', overflow: 'auto', marginBottom: '20px' }} >
 
                                     <ul style={{ listStyleType: 'none' }}>  {candidato.bens.map((bem, index) => {
@@ -140,7 +140,7 @@ class DetalhesCandidato extends Component {
         }
 
         return (
-            <Loading />
+            <Loading message='CARREGANDO DADOS DO TSE...' />
         )
     }
 
