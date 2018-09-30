@@ -37,12 +37,12 @@ export class Navbar extends Component {
                 </Link>
                 <div className="navbar-container">
 
-                    <div className="navbar-item"><NavLink exact to="/" ClassName="active"><small>HOME</small></NavLink></div>
-                    <div className="navbar-item"><NavLink to={`/candidatos/${CARGO.presidente}`} ClassName="active"><small>PRESIDENTES</small></NavLink></div>
-                    <div className="navbar-item"><NavLink to={`/candidatos/${CARGO.governador}`} ClassName="active"><small>GOVERNADORES</small></NavLink></div>
-                    <div className="navbar-item"><NavLink to={`/candidatos/${CARGO.senador}`} ClassName="active"><small>SENADORES</small></NavLink></div>
-                    <div className="navbar-item"><NavLink to={`/candidatos/${CARGO.deputadofederal}`} ClassName="active"><small>DEP FEDERAIS</small></NavLink></div>
-                    <div className="navbar-item"><NavLink to={`/candidatos/${CARGO.deputadoestadual}`} ClassName="active"><small>DEP ESTADUAIS</small></NavLink></div>
+                    <div className="navbar-item"><NavLink exact to="/" ClassName="active"><small><b>HOME</b></small></NavLink></div>
+                    <div className="navbar-item"><NavLink to={`/candidatos/${CARGO.presidente}`} ClassName="active"><small><b>PRESIDENTES</b></small></NavLink></div>
+                    <div className="navbar-item"><NavLink to={`/candidatos/${CARGO.governador}`} ClassName="active"><small><b>GOVERNADORES</b></small></NavLink></div>
+                    <div className="navbar-item"><NavLink to={`/candidatos/${CARGO.senador}`} ClassName="active"><small><b>SENADORES</b></small></NavLink></div>
+                    <div className="navbar-item"><NavLink to={`/candidatos/${CARGO.deputadofederal}`} ClassName="active"><small><b>DEP FEDERAIS</b></small></NavLink></div>
+                    <div className="navbar-item"><NavLink to={`/candidatos/${CARGO.deputadoestadual}`} ClassName="active"><small><b>DEP ESTADUAIS</b></small></NavLink></div>
 
                     {hiddenMenu ? (
                         <div onClick={this.toggleMenu} className="button-menu">

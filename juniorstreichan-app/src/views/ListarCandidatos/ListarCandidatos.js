@@ -44,41 +44,46 @@ class ListarCandidatos extends Component {
     componentDidMount() {
 
         const cargo = this.props.match.params.cargo
-        // console.log(cargo);
         this.cargoParametro = cargo
         this.loadData()
 
     }
 
+    loadState = (dados) => {
+        const { candidatos, cargo, unidadeEleitoral } = dados
+        const candidatosView = candidatos
+        this.setState({ candidatos, cargo, unidadeEleitoral, candidatosView })
+    }
+
     loadData = () => {
 
         window.scrollTo(0, 0)
-        this.setState({ candidatos: [], cargo: {}, unidadeEleitoral: {} })
+        this.setState({ candidatos: [], candidatosView: [], cargo: {}, unidadeEleitoral: {} })
         switch (this.cargoParametro) {
             case CARGO.presidente:
                 getPresidentes().then(dados => {
-                    this.setState(dados)
+                    this.loadState(dados)
                 })
                 break
             case CARGO.governador:
                 getGovernadores().then(dados => {
-                    this.setState(dados)
+                    this.loadState(dados)
                 })
                 break
             case CARGO.senador:
                 getSenadores().then(dados => {
-                    this.setState(dados)
+                    this.loadState(dados)
                 })
                 break
             case CARGO.deputadofederal:
                 getDeputadosFederais().then(dados => {
-                    this.setState(dados)
+                    this.loadState(dados)
                 })
                 break
 
             case CARGO.deputadoestadual:
                 getDeputadosEstaduais().then(dados => {
-                    this.setState(dados)
+                    this.loadState(dados)
                 })
                 break
 
@@ -89,7 +94,6 @@ class ListarCandidatos extends Component {
                 break
         }
 
-        this.filterCandidatos()
 
     }
 
@@ -98,12 +102,19 @@ class ListarCandidatos extends Component {
         const { candidatos } = this.state
 
         if (input) {
-            const query = input.value
+            const query = input.value.toLocaleUpperCase().trim()
             if (query) {
                 const candidatosFiltrados = candidatos.filter((candidato) => {
-                    return candidato.nomeUrna == 'CABO DACIOLO'
+                    if (query.match("[0-9]")) {
+
+                        return candidato.numero.toString().search(query) > -1
+                    }
+                    return (
+                        candidato.nomeUrna.toLocaleUpperCase().search(query) > -1 ||
+                        candidato.nomeCompleto.toLocaleUpperCase().search(query) > -1 ||
+                        candidato.partido.sigla.toLocaleUpperCase().search(query) > -1
+                    )
                 })
-                // console.log(candidatosFiltrados);
 
                 this.setState({
                     candidatosView: candidatosFiltrados
@@ -132,10 +143,11 @@ class ListarCandidatos extends Component {
 
                             <Card padding='5px' minWidth={'100px'} minHeight={'20px'} maxHeight={'80px'} margin='0'>
                                 <div >
-                                    <p><b>{candidatos.length} Candidatos a {cargo.nome} no {unidadeEleitoral.nome}</b></p>
+                                    <p><b>{candidatos.length} Candidatos a {cargo.nome} no {unidadeEleitoral.nome}</b> {candidatosView.length != candidatos.length ? (<small>{candidatosView.length} {candidatosView.length > 1 ? 'resultados' : 'resultado'}</small>) : null}</p>
+
                                     <label htmlFor=""><b>Filtrar por </b></label>
                                     <Icon size={20} icon={search} />
-                                    <input onKeyUp={this.filterCandidatos} type="text" id='search' placeholder='nome, numero ou partido' />
+                                    <input onChange={this.filterCandidatos} type="text" id='search' placeholder='nome, numero ou partido' />
 
 
                                 </div>
