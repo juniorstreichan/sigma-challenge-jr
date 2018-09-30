@@ -37,7 +37,7 @@ img {
     display: none;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 800px) {
     .text-mobile {
         display: block;
     } 

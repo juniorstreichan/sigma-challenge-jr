@@ -98,13 +98,42 @@ class DetalhesCandidato extends Component {
             return (
 
                 <div>
-                    {candidato.bens.length > 0 ? (<Button width='100%' label='BENS DECLARADOS PELO CANDIDATO' onClick={this.toggleModal} />) : (<p>NENHUM BEM DECLARADO</p>)}
+                    {candidato.bens.length > 0 ? (
+                        <div>
+                            <Button width='100%' label={`BENS DECLARADOS ${candidato.descricaoSexo === 'FEM.' ? 'PELA CANDIDATA' :'PELO CANDIDATO'}`} onClick={this.toggleModal} />
+                            <Modal closeBgClick show={showModal} handleClose={this.toggleModal} >
+                                <h3>Bens declarados por {candidato.nomeUrna}</h3>
+                                <div style={{ padding: '2%', height: '200px', width: '80%', overflow: 'auto', marginBottom: '20px' }} >
+
+                                    <ul style={{ listStyleType: 'none' }}>  {candidato.bens.map((bem, index) => {
+
+                                        return (
+                                            <li key={index}>
+                                                <div>
+                                                    <p>{bem.descricao}</p>
+                                                    <small>{bem.descricaoDeTipoDeBem}<b>, Valor: {bem.valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</b></small>
+                                                </div>
+                                                <hr />
+                                            </li>
+
+
+                                        )
+                                    })}
+                                    </ul>
+
+                                </div>
+                                <div >
+                                    <h5>Quantidade de bens:{candidato.bens.length}</h5>
+                                    <h5>Valor: {candidato.totalDeBens.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</h5>
+                         
+                                </div>
+                               
+                            </Modal>
+                        </div>
+
+                    ) : (<p>NENHUM BEM DECLARADO</p>)}
                     <CardDetalhesCandidato candidato={candidato} />
-                    <Modal closeBgClick show={showModal} handleClose={this.toggleModal} >
-                       <div style={{padding:'5%', maxHeight:'500px',overflow:'auto'}} >
-TESTE
-                       </div>
-                    </Modal>
+
 
                 </div>
             );

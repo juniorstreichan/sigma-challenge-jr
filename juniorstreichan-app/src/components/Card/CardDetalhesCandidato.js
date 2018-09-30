@@ -68,7 +68,7 @@ export const CardDetalhesCandidato = ({ candidato }) => {
                                                 (site, index) => {
                                                     return (
                                                         <div>
-                                                            <small><a target='_blank' href={site}>{site.substring(0,80)}</a></small>
+                                                            <small><a target='_blank' href={site}>{site.substring(0,30)}...</a></small>
                                                         </div>
                                                     )
                                                 }
