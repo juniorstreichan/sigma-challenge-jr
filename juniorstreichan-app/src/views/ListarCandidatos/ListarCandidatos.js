@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Loading, Container, CardItem, Card } from '../../components'
+import { Loading, Container, CardItem, Card, Button } from '../../components'
 import {
     getPresidentes,
     getGovernadores,
@@ -11,7 +11,7 @@ import { CARGO } from '../../config/cargos';
 import { CardCandidato } from '../../components/Card/CardCandidato';
 import './ListarCandidatos.css'
 import { Icon } from 'react-icons-kit';
-import { search } from 'react-icons-kit/fa/search'
+import { search, close } from 'react-icons-kit/fa'
 
 
 class ListarCandidatos extends Component {
@@ -23,12 +23,12 @@ class ListarCandidatos extends Component {
 
         var cargoParametro = ''
         this.state = {
+            showSearch: false,
             unidadeEleitoral: {},
             cargo: {},
             candidatos: [],
             candidatosView: []
         }
-
 
     }
 
@@ -43,10 +43,21 @@ class ListarCandidatos extends Component {
 
     componentDidMount() {
 
+        if (window.innerWidth >= 600) {
+            this.setState({ showSearch: true })
+        }
+
         const cargo = this.props.match.params.cargo
         this.cargoParametro = cargo
         this.loadData()
 
+    }
+
+    toogleSearch = () => {
+        const { showSearch } = this.state
+        this.setState({
+            showSearch: !showSearch
+        })
     }
 
     loadState = (dados) => {
@@ -133,31 +144,54 @@ class ListarCandidatos extends Component {
 
     render() {
 
-        const { candidatos, unidadeEleitoral, cargo, candidatosView } = this.state
+        const { candidatos, unidadeEleitoral, cargo, candidatosView, showSearch, isMobile } = this.state
 
         if (candidatos.length > 0) {
             return (
                 <div>
-                    <Container>
-                        <div className='searchbar'>
-
-                            <Card padding='5px' minWidth={'100px'} minHeight={'20px'} maxHeight={'80px'} margin='0'>
-                                <div >
-                                    <p><b>{candidatos.length} Candidatos a {cargo.nome} no {unidadeEleitoral.nome}</b> {candidatosView.length != candidatos.length ? (<small>{candidatosView.length} {candidatosView.length > 1 ? 'resultados' : 'resultado'}</small>) : null}</p>
-
-                                    <label htmlFor=""><b>Filtrar por </b></label>
-                                    <Icon size={20} icon={search} />
-                                    <input onChange={this.filterCandidatos} type="text" id='search' placeholder='nome, numero ou partido' />
+                     
 
 
-                                </div>
-                            </Card>
-                        </div>
-                    </Container>
+                    <div>
+
+                        <Container>
+                            <div className='searchbar'>
+
+
+
+                                <Card padding='5px' minWidth={'100px'} minHeight={'20px'} maxHeight={'150px'} margin='0'>
+                                    <div >
+                                        <p><b>{candidatos.length} Candidatos a {cargo.nome} no {unidadeEleitoral.nome}</b> {candidatosView.length != candidatos.length ? (<small>{candidatosView.length} {candidatosView.length > 1 ? 'resultados' : 'resultado'}</small>) : null}</p>
+
+                                        <label htmlFor=""><b>Filtrar por </b></label>
+                                        <Icon size={20} icon={search} />
+                                        <input onChange={this.filterCandidatos} type="text" id='search' placeholder='nome, numero ou partido' />
+
+
+                                    </div>
+                                </Card>
+
+
+                            </div>
+                        </Container>
+                
+
+                    </div>
+
                     <Container marginTop='110px' >
 
                         {candidatosView.map((candidato, index) => (<div key={candidato.id}><CardCandidato candidato={candidato} link={`/candidato/${this.cargoParametro}/${candidato.id}`} /></div>))}
                     </Container>
+                    <div className='fab'>
+                        <Button
+                         onClick={this.toogleSearch} 
+                         icon={showSearch ? close : search} 
+                         borderRadius='50px' 
+                         width='50px' 
+                         height='50px' 
+                         bgColor={showSearch ? 'red' : 'green'} 
+                         />
+                    </div>
                 </div>
             );
         }
