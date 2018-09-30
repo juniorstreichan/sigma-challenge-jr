@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 import { NavLink, Link } from "react-router-dom";
 import logo from '../../assets/img/logo.png'
 import { Button } from '../Button/Button';
-import { close, bars } from 'react-icons-kit/fa'
+import {  bars } from 'react-icons-kit/fa'
+import {reply} from 'react-icons-kit/fa/reply'
+
 
 import './Navbar.css'
 import { CARGO } from '../../config/cargos';
@@ -34,15 +36,6 @@ export class Navbar extends Component {
                     <img className='logo' src={logo} alt="Logo" />
                 </Link>
                 <div className="navbar-container">
-                    {/* <select   >
-                        <option value={EstadoSelecionado.sigla}>{EstadoSelecionado.nome}</option>
-                        {ESTADOS.map((estado) =>
-                            (
-                                <option value={estado.sigla}>{estado.nome}</option>
-
-                            )
-                        )}
-                    </select> */}
 
                     <div className="navbar-item"><NavLink exact to="/" ClassName="active"><small>HOME</small></NavLink></div>
                     <div className="navbar-item"><NavLink to={`/candidatos/${CARGO.presidente}`} ClassName="active"><small>PRESIDENTES</small></NavLink></div>
@@ -71,7 +64,7 @@ export class Navbar extends Component {
                         <div><NavLink exact to={`/candidatos/${CARGO.deputadoestadual}`} ClassName="active"><small>DEP ESTADUAIS</small></NavLink></div>
 
                         <hr />
-                        <Button height='50px' padding={10} bgColor={'green'} color={'yellow'} onClick={this.toggleMenu} icon={close} />
+                        <Button height='50px' padding={10} bgColor={'green'} color={'yellow'} onClick={this.toggleMenu} icon={reply} label='VOLTAR' />
                     </div>
                 </div>
             ) : null}

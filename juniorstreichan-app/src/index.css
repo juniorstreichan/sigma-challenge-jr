@@ -1,13 +1,30 @@
 /* fonte padrao */
 
-
 html {
   line-height: 1;
   font-family: "Arial", sans-serif;
+}
+
+body {
+  background-color: #00458bef;
+}
+
+input[type=text] {
+  border-radius: 1px;
+  background: #e2e2e2;
+  border: 2px solid#9000;
+  border-bottom-width: 3px;
+  height: 35px;
+  font-size: 22px;
+}
+
+input[type=text]:hover {
+  background: #ffffff;
+  border-bottom-color: rgb(13, 54, 0);
 
 }
 
-body{
-  background-color: #00458bef;
-
+input[type=text]:focus {
+  background: #ffffff;
+  border-bottom-color: rgb(13, 0, 131);
 }
