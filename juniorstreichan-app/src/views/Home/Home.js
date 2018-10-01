@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom'
 import { CARGO } from '../../config/cargos';
 import logo from '../../assets/img/logo.png'
 import gif from '../../assets/gifs/navigation.gif'
+import gifMobile from '../../assets/gifs/navigation-mobile.gif'
 class Home extends Component {
 
     componentDidMount() {
@@ -23,9 +24,9 @@ class Home extends Component {
             justifyContent: 'center',
             alignItems: 'center',
             alignContent: 'center',
-            margin: '100px',
-            marginTop:'40px',
-            marginBottom:'20px',
+            margin: '5%',
+            marginTop: '40px',
+            marginBottom: '20px',
             color: 'blue'
 
         }
@@ -42,7 +43,7 @@ class Home extends Component {
         const { showModal } = this.state
         return (
             <Container >
-                <Card flexDirection='row' justifyContent='center' width='100%' bgColor={'#f5f12a'} >
+                <Card margin='0' flexDirection='row' justifyContent='center' width='85%' bgColor={'#f5f12a'} >
                     <Container >
                         <div style={styles}>
                             <img src={logo} style={stylesImg} alt='ELEIÇÕES 2018' />
@@ -105,17 +106,19 @@ class Home extends Component {
                     </Container>
 
                 </Card>
-                <p style={{ color: 'white' }}>
-                    <b>  Caso exista alguma dúvida, dê uma olhada no</b> <Button onClick={() => {
-                        this.setState({ showModal: !showModal })
-                    }} label='TUTORIAL' />
+                <div>
+                    <p style={{ color: 'white' }}>
+                        <b>  Caso exista alguma dúvida, dê uma olhada no</b> <Button onClick={() => {
+                            this.setState({ showModal: !showModal })
+                        }} label='TUTORIAL' />
 
-                </p>
+                    </p>
+                </div>
                 <Modal closeBgClick show={showModal} handleClose={() => {
                     this.setState({ showModal: !showModal })
                 }}>
                     <div>
-                        <img src={gif} style={{width:'100%' , left:'0'}} alt='ELEIÇÕES 2018' />
+                        <img src={window.innerWidth >= 600 ? gif : gifMobile} style={{ width: '100%', left: '0' }} alt='ELEIÇÕES 2018' />
                     </div>
                 </Modal>
             </Container>
