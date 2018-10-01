@@ -24,7 +24,7 @@ Não foi utilizado Framework de estilização ou biblioteca de componentes como 
 
    <b>
 git clone https://github.com/juniorstreichan/sigma-challenge-jr.git <br>
-cd juniorstreichan-app <br>
+cd sigma-challenge-jr/juniorstreichan-app <br>
 npm install <br>
 npm start <br>
  </b>
