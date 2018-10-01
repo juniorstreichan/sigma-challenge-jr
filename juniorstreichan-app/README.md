@@ -9,7 +9,7 @@ Esta aplicação possui as seguintes funcionalidades:
  - Pagina contendo os detalhes da candidatura como nome, foto, numero, coligação, contato, sites, vices, situação(deferido, indeferido) dentre outros.
  - Visualização dos bens declarados pelo(a) candidato(a).
 ![enter image description here](https://raw.githubusercontent.com/juniorstreichan/sigma-challenge-jr/master/juniorstreichan-app/src/assets/gifs/navigation.gif)
-
+![enter image description here](https://raw.githubusercontent.com/juniorstreichan/sigma-challenge-jr/master/juniorstreichan-app/src/assets/gifs/navigation-mobile.gif)
 #### ESPECIFICAÇÕES TÉCNICAS <br>
 Esta aplicação foi implementada no padrão Single Page Application (SPA)
 utilizando o Framework [React JS](https://reactjs.org/) e configurado com o utilitário [create-react-app](https://www.npmjs.com/package/create-react-app) ambos desenvolvidos pelo Facebook.
@@ -21,6 +21,14 @@ Não foi utilizado Framework de estilização ou biblioteca de componentes como 
 - [react-router-dom](https://www.npmjs.com/package/react-router-dom) - Para Rotas
 - [react-spinkit](http://kyleamathews.github.io/react-spinkit/) - Para o componente Loading
 
+#### OBSERVAÇÕES <br>
+- Utilizei O React pela facilidade de controle e reaproveitamento de componentes visuais.
+- Não utilizei Redux no projeto, ainda que fosse necessário, pois ainda não possuo domínio mínimo do padrão Flux e o prazo de entrega era curto.
+- Para resolver os problemas de centralização  e redimensionamento  de componentes foi utilizado **flex-box**
 
+##### CONSIDERAÇÕES FINAIS <br>
+Foi uma experiência ótima desenvolver este pequeno projeto, pois consegui colocar em prática algumas coisas das quais venho estudando.
 
+Muito Obrigado!
+<small>*Junior Erdmann Streichan*</small>
 
