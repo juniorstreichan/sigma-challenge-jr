@@ -1,4 +1,20 @@
-export var EstadoSelecionado = { nome: 'Mato Grosso', sigla: 'MT' }
+var EstadoSelecionado = { nome: 'Mato Grosso', sigla: 'MT' }
+
+
+export const getEstadoselecionado = () => {
+    return EstadoSelecionado
+}
+
+export const setEstadoselecionado = ({ nome, sigla }) => {
+
+    try {
+        EstadoSelecionado.nome = nome
+        EstadoSelecionado.sigla = sigla
+    } catch (error) {
+        return
+    }
+}
+
 
 export const ESTADOS = [
     { nome: 'Acre', sigla: 'AC' },

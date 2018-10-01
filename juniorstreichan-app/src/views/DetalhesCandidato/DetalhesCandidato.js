@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
 import { CARGO } from '../../config/cargos';
 import { getPresidenteById, getCandidatoById } from '../../services/CandidatoService';
-import { Container, Card, Loading, CardItem, Button, Modal } from '../../components';
+import {  Loading,   Button, Modal } from '../../components';
 import { CardDetalhesCandidato } from '../../components/Card/CardDetalhesCandidato';
 
 class DetalhesCandidato extends Component {
 
     constructor(props) {
         super(props)
-
-        var cargoParametro = ''
-        var idParametro = ''
         this.state = {
             showModal: false,
             cargo: {},
@@ -31,7 +28,7 @@ class DetalhesCandidato extends Component {
     componentDidUpdate() {
         const cargo = this.props.match.params.cargo
         const id = this.props.match.params.id
-        if (this.cargoParametro != cargo || this.idParametro != id) {
+        if (this.cargoParametro !== cargo || this.idParametro !== id) {
             this.cargoParametro = cargo
             this.idParametro = id
             this.loadData()

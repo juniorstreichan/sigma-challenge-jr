@@ -10,7 +10,7 @@
     z-index: 50;
 }
 
-.fab{
+.fab {
     position: fixed;
     right: 8%;
     bottom: 5%;
@@ -20,15 +20,18 @@
     border-radius: 100px;
 }
 
+.hidden {
+    visibility: hidden;
+    display: none;
+}
 
 input[type=text] {
     width: 70%;
     text-transform: uppercase;
 }
 
-
 @media screen and (max-width: 600px) {
-    .fab{
+    .fab {
         display: block;
     }
 }

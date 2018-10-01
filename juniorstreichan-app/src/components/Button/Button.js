@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Icon } from "react-icons-kit";
 import "./Button.css";
 export const Button = props => {

@@ -12,8 +12,9 @@ class Footer extends Component {
             <footer>
                 <div className="content">
                     <div className="box">
-                        ELEIÇOES 2018
-                        
+                        <h4>PORTAL DEMOCRÁTICO</h4>
+                        <h4>ELEIÇOES 2018</h4>
+
                     </div>
                     <div className="box">
                         <Link to='/'>
@@ -37,11 +38,11 @@ class Footer extends Component {
                             <Button margin='10px' bgColor={'#9000'} padding='10px' label={'DEPUTADOS ESTADUAIS'} />
                         </Link>
                     </div>
-                    <a href="https://github.com/juniorstreichan/sigma-challenge-jr" target='_blank'>
-                    <img src={logoJr} width='50px'/>                    
+                    <a href="https://github.com/juniorstreichan/sigma-challenge-jr" rel='noopener noreferrer' target="_blank">
+                        <img src={logoJr} width='50px' alt='JUNIOR STREICHAN' />
                     </a>
                 </div>
-                
+
             </footer>
         );
     }

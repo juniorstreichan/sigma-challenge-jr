@@ -5,17 +5,12 @@ import { Container } from '../Container/Container';
 import { Icon } from 'react-icons-kit';
 import { checkCircleO } from 'react-icons-kit/fa/checkCircleO'
 import { timesCircleO } from 'react-icons-kit/fa/timesCircleO'
-import { CardItem } from './CardItem';
 import avatar from '../../assets/img/avatar.png'
-import { Button } from '../Button/Button';
 
-var showModal = false
 
 export const CardDetalhesCandidato = ({ candidato }) => {
 
-
     const {
-        bens,
         cargo,
         fotoUrl,
         nomeCompleto,
@@ -27,13 +22,10 @@ export const CardDetalhesCandidato = ({ candidato }) => {
         emails,
         sites = [],
         nomeColigacao,
-        composicaoColigacao,
         partido } = candidato
 
     if (candidato) {
 
-        var showSites = false
-        var showBens = false
         return (
             <Card>
                 <main>
@@ -45,7 +37,7 @@ export const CardDetalhesCandidato = ({ candidato }) => {
                         <Container>
                             <h3 className='text-mobile'> {nomeUrna} </h3>
                             <div className='wrapper-img'>
-                                <img src={fotoUrl || avatar} className='img-candidato' />
+                                <img src={fotoUrl || avatar} className='img-candidato' alt={`Foto de ${nomeUrna}`} />
                                 <div>
                                     Contato
                                 {emails ? (
@@ -61,14 +53,14 @@ export const CardDetalhesCandidato = ({ candidato }) => {
                                     ) : ''}
 
 
-                                    { sites && sites.length >0  ? (
+                                    {sites && sites.length > 0 ? (
                                         <div>
                                             Sites
                                    {sites.map(
                                                 (site, index) => {
                                                     return (
                                                         <div>
-                                                            <small><a target='_blank' href={site}>{site.substring(0,30)}...</a></small>
+                                                            <small><a target='_blank' href={site}>{site.substring(0, 30)}...</a></small>
                                                         </div>
                                                     )
                                                 }
@@ -87,14 +79,14 @@ export const CardDetalhesCandidato = ({ candidato }) => {
                             <h3>Número : {numero}</h3>
                             <h4>Filiação partidária : {partido.nome} / {partido.sigla}</h4>
                             <h4>Coligação : {nomeColigacao} </h4>
-                        
+
                             {vices ? (
                                 <div>
-                                    <p><b>Vices</b></p>
+                                    <p><b>{vices.length > 1 ? 'Vices' : 'Vice'}</b></p>
                                     {vices.map((vice, index) => {
                                         return (
                                             <div key={index}>
-                                                <img src={vice.urlFoto || avatar} className='img-vice' />
+                                                <img src={vice.urlFoto || avatar} className='img-vice' alt={`Foto de ${vice.nm_URNA}`} />
                                                 <p>{vice.nm_URNA}</p>
                                             </div>
                                         )

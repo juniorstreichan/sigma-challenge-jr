@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Navbar, Container, Footer } from './components';
+import { Navbar,  Footer } from './components';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { Home, ListarCandidatos, DetalhesCandidato } from './views';
 import { NotFound } from './components/NotFound/NotFound';

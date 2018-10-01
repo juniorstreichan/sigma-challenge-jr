@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Loading, Container, CardItem, Card, Button } from '../../components'
+import { Loading, Container, Card, Button } from '../../components'
 import {
     getPresidentes,
     getGovernadores,
@@ -21,7 +21,6 @@ class ListarCandidatos extends Component {
     constructor(props) {
         super(props)
 
-        var cargoParametro = ''
         this.state = {
             showSearch: false,
             unidadeEleitoral: {},
@@ -55,6 +54,10 @@ class ListarCandidatos extends Component {
 
     toogleSearch = () => {
         const { showSearch } = this.state
+        if (!showSearch) {
+            document.getElementById('search').value = ''
+            this.filterCandidatos()
+        }
         this.setState({
             showSearch: !showSearch
         })
@@ -116,7 +119,7 @@ class ListarCandidatos extends Component {
             const query = input.value.toLocaleUpperCase().trim()
             if (query) {
                 const candidatosFiltrados = candidatos.filter((candidato) => {
-                    if (query.match("[0-9]")) {
+                    if (query.match('[0-9]')) {
 
                         return candidato.numero.toString().search(query) > -1
                     }
@@ -144,15 +147,15 @@ class ListarCandidatos extends Component {
 
     render() {
 
-        const { candidatos, unidadeEleitoral, cargo, candidatosView, showSearch, isMobile } = this.state
+        const { candidatos, unidadeEleitoral, cargo, candidatosView, showSearch } = this.state
 
         if (candidatos.length > 0) {
             return (
                 <div>
-                     
 
 
-                    <div>
+
+                    <div className={!showSearch ? 'hidden' : ''} >
 
                         <Container>
                             <div className='searchbar'>
@@ -161,7 +164,7 @@ class ListarCandidatos extends Component {
 
                                 <Card padding='5px' minWidth={'100px'} minHeight={'20px'} maxHeight={'150px'} margin='0'>
                                     <div >
-                                        <p><b>{candidatos.length} Candidatos a {cargo.nome} no {unidadeEleitoral.nome}</b> {candidatosView.length != candidatos.length ? (<small>{candidatosView.length} {candidatosView.length > 1 ? 'resultados' : 'resultado'}</small>) : null}</p>
+                                        <p><b>{candidatos.length} Candidatos a {cargo.nome} / {unidadeEleitoral.nome}</b> {candidatosView.length !== candidatos.length ? (<small>{candidatosView.length} {candidatosView.length > 1 ? 'resultados' : 'resultado'}</small>) : null}</p>
 
                                         <label htmlFor=""><b>Filtrar por </b></label>
                                         <Icon size={20} icon={search} />
@@ -174,7 +177,7 @@ class ListarCandidatos extends Component {
 
                             </div>
                         </Container>
-                
+
 
                     </div>
 
@@ -184,13 +187,13 @@ class ListarCandidatos extends Component {
                     </Container>
                     <div className='fab'>
                         <Button
-                         onClick={this.toogleSearch} 
-                         icon={showSearch ? close : search} 
-                         borderRadius='50px' 
-                         width='50px' 
-                         height='50px' 
-                         bgColor={showSearch ? 'red' : 'green'} 
-                         />
+                            onClick={this.toogleSearch}
+                            icon={showSearch ? close : search}
+                            borderRadius='50px'
+                            width='50px'
+                            height='50px'
+                            bgColor={showSearch ? 'red' : 'green'}
+                        />
                     </div>
                 </div>
             );

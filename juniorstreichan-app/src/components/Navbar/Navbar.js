@@ -17,7 +17,11 @@ export class Navbar extends Component {
     }
 
     closeMenu = () => {
-        this.state.hiddenMenu = true
+
+        this.setState({
+            hiddenMenu:true
+        })
+
     }
 
     toggleMenu = () => {
