@@ -13,7 +13,7 @@ Esta aplicação possui as seguintes funcionalidades:
 ![enter image description here](https://raw.githubusercontent.com/juniorstreichan/sigma-challenge-jr/master/juniorstreichan-app/src/assets/gifs/navigation-mobile.gif)
 #### ESPECIFICAÇÕES TÉCNICAS <br>
 Esta aplicação foi implementada no padrão Single Page Application (SPA)
-utilizando o Framework [React JS](https://reactjs.org/) e configurado com o utilitário [create-react-app](https://www.npmjs.com/package/create-react-app) ambos desenvolvidos pelo Facebook.
+utilizando a Biblioteca [React JS](https://reactjs.org/) e a configuração com o utilitário [create-react-app](https://www.npmjs.com/package/create-react-app) ambos desenvolvidos pelo Facebook.
 
 Não foi utilizado Framework de estilização ou biblioteca de componentes como Bootstrap, a estilização da aplicação e seus componentes foi feita somente com CSS.
 
