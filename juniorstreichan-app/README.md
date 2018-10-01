@@ -1,5 +1,5 @@
 ## PORTAL DEMOCRÁTICO / ELEIÇÕES 2018
-[http://eleicoes-jedi.herokuapp.com/](http://eleicoes-jedi.herokuapp.com/)
+[http://eleicoes-jedi.herokuapp.com/](http://eleicoes-jedi.herokuapp.com/) <br>
 **O que é ?** <br>
 Uma aplicação Web que tem como objetivo mostrar informações vindas da API do Tribunal Superior Eleitoral (TSE) referente aos candidatos que participam das eleições 2018.
 
